@@ -24,9 +24,23 @@ namespace Bowling
             {
                 Console.WriteLine($"Turn {i + 1}:");
                 var pinsKnockedDown = new Random().Next(pins + 1);
-                Console.WriteLine($"You knocked down {pinsKnockedDown} pins!");
                 pins -= pinsKnockedDown;
                 frameScore += pinsKnockedDown;
+                if (pins == 0)
+                {
+                    if (i == 0)
+                    {
+                        Console.WriteLine("You got a strike!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You got a spare!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"You knocked down {pinsKnockedDown} pins!");
+                }
             };
             return frameScore;
         }
