@@ -17,12 +17,18 @@ namespace Bowling
 
         internal Frame() : this(2) { }
 
-        internal void Play()
+        internal int Play()
         {
+            int frameScore = 0;
             for (int i = 0; i < turns; i++)
             {
                 Console.WriteLine($"Turn {i + 1}:");
-            }
+                var pinsKnockedDown = new Random().Next(pins + 1);
+                Console.WriteLine($"You knocked down {pinsKnockedDown} pins!");
+                pins -= pinsKnockedDown;
+                frameScore += pinsKnockedDown;
+            };
+            return frameScore;
         }
     }
 }
