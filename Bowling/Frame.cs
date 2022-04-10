@@ -8,8 +8,8 @@ namespace Bowling
 {
     internal class Frame
     {
-        int pins = 10;
-        int turns;
+        private int pins = 10;
+        private int turns;
         internal Frame(int turns)
         {
             this.turns = turns;
