@@ -8,6 +8,9 @@ namespace Bowling
 {
     internal class Frame
     {
+        internal void Play()
+        {
 
+        }
     }
 }
