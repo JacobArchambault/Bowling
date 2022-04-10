@@ -8,7 +8,20 @@ namespace Bowling
 {
     internal class BowlingGame
     {
-        private readonly Frame[] frames = new Frame[10];
+        private readonly Frame[] frames = new Frame[10]
+        {
+            new Frame(),
+            new Frame(),
+            new Frame(),
+            new Frame(),
+            new Frame(),
+            new Frame(),
+            new Frame(),
+            new Frame(),
+            new Frame(),
+            new Frame(3)
+        };
+
         private int score = 0;
 
         internal void Play()
