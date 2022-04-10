@@ -8,9 +8,18 @@ namespace Bowling
 {
     internal class Frame
     {
+        int pins = 10;
+        int turns;
+        internal Frame(int turns)
+        {
+            this.turns = turns;
+        }
+
+        internal Frame() : this(2) { }
+
         internal void Play()
         {
-
+            
         }
     }
 }
