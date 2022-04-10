@@ -31,6 +31,7 @@ namespace Bowling
                     if (i == 0)
                     {
                         Console.WriteLine("You got a strike!");
+                        i = turns;
                     }
                     else
                     {
