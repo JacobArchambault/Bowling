@@ -8,9 +8,9 @@ namespace Bowling
 {
     internal class BowlingGame
     {
+        private readonly Frame[] frames = new Frame[10];
         internal static void Play()
         {
-
         }
     }
 }
