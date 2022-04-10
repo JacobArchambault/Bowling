@@ -19,7 +19,10 @@ namespace Bowling
 
         internal void Play()
         {
-            
+            for (int i = 0; i < turns; i++)
+            {
+                Console.WriteLine($"Turn {i + 1}:");
+            }
         }
     }
 }

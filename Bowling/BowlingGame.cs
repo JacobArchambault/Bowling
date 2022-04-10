@@ -26,10 +26,10 @@ namespace Bowling
 
         internal void Play()
         {
-            for (int i = 1; i <= frames.Length; i++)
+            for (int i = 0; i < frames.Length; i++)
             {
-                Console.WriteLine($"Frame {i}:");
-                frames[0].Play();
+                Console.WriteLine($"Frame {i + 1}:");
+                frames[i].Play();
             }
         }
     }
