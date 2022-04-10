@@ -8,5 +8,9 @@ namespace Bowling
 {
     internal class BowlingGame
     {
+        internal static void Play()
+        {
+
+        }
     }
 }
