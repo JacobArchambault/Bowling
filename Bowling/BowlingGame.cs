@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bowling
+﻿namespace Bowling
 {
     internal class BowlingGame
     {
@@ -31,7 +25,7 @@ namespace Bowling
                 var roundScores = frames[i].Play();
                 for (int j = 0; j < roundScores.Count(); j++)
                 {
-                    Console.Write($"Roll {j+1}: {roundScores[j]}\t");
+                    Console.Write($"Roll {j + 1}: {roundScores[j]}\t");
                 }
                 scores[i] = roundScores.Sum();
                 Console.Write($"Round total: {scores[i]}");
