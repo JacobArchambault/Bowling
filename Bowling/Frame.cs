@@ -10,6 +10,7 @@ namespace Bowling
     {
         private int pins = 10;
         private int turns;
+        private List<int> scores = new List<int>();
         internal Frame(int turns)
         {
             this.turns = turns;
@@ -17,15 +18,14 @@ namespace Bowling
 
         internal Frame() : this(2) { }
 
-        internal int Play()
+        internal List<int> Play()
         {
-            int frameScore = 0;
             for (int i = 0; i < turns; i++)
             {
                 Console.WriteLine($"Turn {i + 1}:");
                 var pinsKnockedDown = new Random().Next(pins + 1);
                 pins -= pinsKnockedDown;
-                frameScore += pinsKnockedDown;
+                scores.Add(pinsKnockedDown);
                 if (pins == 0)
                 {
                     if (i == 0)
@@ -43,7 +43,7 @@ namespace Bowling
                     Console.WriteLine($"You knocked down {pinsKnockedDown} pins!");
                 }
             };
-            return frameScore;
+            return scores;
         }
     }
 }
