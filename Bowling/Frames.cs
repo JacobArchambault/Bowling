@@ -29,12 +29,8 @@ namespace Bowling
             {
                 var roundScores = frames[i].Play();
                 scores[i] = roundScores;
-                //for (int j = 0; j < roundScores.Count(); j++)
-                //{
-                //    //Console.Write($"Roll {j + 1}: {roundScores[j]}\t");
-                //}
+                scores[i].Add(roundScores.Sum());
                 //scores[i] = roundScores.Sum();
-                //Console.Write($"Round total: {scores[i]}");
                 //Console.WriteLine();
             }
             return scores;
