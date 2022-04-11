@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bowling
+﻿namespace Bowling
 {
     internal class Frames
     {
@@ -32,15 +26,12 @@ namespace Bowling
                 scores[i].Add(roundScores.Sum());
                 if (i > 0 && IsSpare(scores[i - 1]))
                 {
-                    scores[i - 1][^1] += scores[i][0]; 
+                    scores[i - 1][^1] += scores[i][0];
                 }
                 else if (i > 0 && IsStrike(scores[i - 1]))
                 {
                     scores[i - 1][^1] += (scores[i][0] + scores[i][1]); // incorrect: will throw exception if two strikes in a row occur
                 }
-
-                //scores[i] = roundScores.Sum();
-                //Console.WriteLine();
             }
             return scores;
         }
