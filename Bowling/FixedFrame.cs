@@ -9,7 +9,7 @@
             _turns = turns;
         }
 
-        internal Tuple<IEnumerable<int>, int> Play()
+        internal Tuple<int[], int> Play()
         {
             var turns = _turns.Play();
             return Tuple.Create(turns, turns.Sum());

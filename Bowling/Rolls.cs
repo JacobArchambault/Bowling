@@ -17,7 +17,7 @@ namespace Bowling
 
         internal Rolls() : this(2) { }
 
-        public IEnumerable<int> Play()
+        public int[] Play()
         {
             int[] scores = new int[turns];
             for (int i = 0; i < turns; i++)
