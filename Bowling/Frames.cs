@@ -36,7 +36,7 @@
             return scores;
         }
 
-        private bool IsStrike(List<int> list)
+        private static bool IsStrike(List<int> list)
         {
             return list[0] == 10;
         }
