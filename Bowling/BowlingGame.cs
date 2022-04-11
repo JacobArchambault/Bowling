@@ -6,7 +6,7 @@
 
         internal void Play()
         {
-            var scores = _frames.Play();
+            var scores = _frames.PlayAll();
             var finalScore = 0;
             for (int i = 0; i < scores.Length; i++)
             {

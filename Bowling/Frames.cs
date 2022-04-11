@@ -22,7 +22,7 @@ namespace Bowling
             new Frame(3)
         };
 
-        internal List<int>[] Play()
+        internal List<int>[] PlayAll()
         {
             List<int>[] scores = new List<int>[10];
             for (int i = 0; i < frames.Length; i++)
