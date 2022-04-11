@@ -34,10 +34,20 @@ namespace Bowling
                 {
                     scores[i - 1][^1] += scores[i][0]; 
                 }
+                else if (i > 0 && IsStrike(scores[i - 1]))
+                {
+                    scores[i - 1][^1] += (scores[i][0] + scores[i][1]); // incorrect: will throw exception if two strikes in a row occur
+                }
+
                 //scores[i] = roundScores.Sum();
                 //Console.WriteLine();
             }
             return scores;
+        }
+
+        private bool IsStrike(List<int> list)
+        {
+            return list[0] == 10;
         }
 
         private static bool IsSpare(List<int> list)
