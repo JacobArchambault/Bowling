@@ -32,7 +32,7 @@ namespace Bowling
                 scores[i].Add(roundScores.Sum());
                 if (i > 0 && IsSpare(scores[i - 1]))
                 {
-                    scores[i - 1][scores[i - 1].Count - 1] += scores[i][0]; 
+                    scores[i - 1][^1] += scores[i][0]; 
                 }
                 //scores[i] = roundScores.Sum();
                 //Console.WriteLine();
@@ -40,9 +40,9 @@ namespace Bowling
             return scores;
         }
 
-        private bool IsSpare(List<int> list)
+        private static bool IsSpare(List<int> list)
         {
-            return list.Count() == 3 && list[0] + list[1] == 10;
+            return list.Count == 3 && list[0] + list[1] == 10;
         }
     }
 }

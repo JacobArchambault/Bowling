@@ -3,7 +3,7 @@
     internal class Frame
     {
         private int pins = 10;
-        private int turns;
+        private readonly int turns;
         internal Frame(int turns)
         {
             this.turns = turns;

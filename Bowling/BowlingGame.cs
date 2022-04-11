@@ -11,9 +11,9 @@
             for (int i = 0; i < scores.Length; i++)
             {
                 Console.Write($"Frame {i + 1}:\t");
-                for (int j = 0; j < scores[i].Count(); j++)
+                for (int j = 0; j < scores[i].Count; j++)
                 {
-                    if (j < scores[i].Count() - 1)
+                    if (j < scores[i].Count - 1)
                     {
                         Console.Write($"Roll {j + 1}: {scores[i][j]}\t");
                     }
