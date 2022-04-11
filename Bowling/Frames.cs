@@ -30,7 +30,7 @@
                 }
                 else if (i > 0 && IsStrike(scores[i - 1]))
                 {
-                    scores[i - 1][^1] += (scores[i][0] + scores[i][1]); // incorrect: will throw exception if two strikes in a row occur
+                    scores[i - 1][^1] += (scores[i][0] + scores[i][1]); // incorrect: if two strikes in a row occur
                 }
             }
             return scores;
@@ -43,7 +43,7 @@
 
         private static bool IsSpare(List<int> list)
         {
-            return list.Count == 3 && list[0] + list[1] == 10;
+            return list[0] != 10 && list[0] + list[1] == 10;
         }
     }
 }
