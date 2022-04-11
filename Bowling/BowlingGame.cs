@@ -7,6 +7,7 @@
         internal void Play()
         {
             var scores = _frames.Play();
+            var finalScore = 0;
             for (int i = 0; i < scores.Length; i++)
             {
                 Console.Write($"Frame {i + 1}:\t");
@@ -18,12 +19,13 @@
                     }
                     else
                     {
-                        Console.Write($"Round total: {scores[i][j]}");
+                        Console.Write($"Round total: {scores[i][j]}\t");
+                        finalScore += scores[i][j];
                     }
                 }
-
                 Console.WriteLine();
             }
+            Console.WriteLine($"Final score: {finalScore}");
 
         }
     }
