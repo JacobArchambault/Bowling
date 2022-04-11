@@ -13,7 +13,7 @@
             new Frame(),
             new Frame(),
             new Frame(),
-            new Frame(3)
+            new Frame()
         };
 
         internal List<int>[] PlayAll()
