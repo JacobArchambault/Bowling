@@ -10,7 +10,7 @@ namespace Bowling
     {
         private int pins = 10;
         private int turns;
-        private List<int> scores = new List<int>();
+        private List<int> scores = new();
         internal Frame(int turns)
         {
             this.turns = turns;
@@ -22,25 +22,12 @@ namespace Bowling
         {
             for (int i = 0; i < turns; i++)
             {
-                Console.WriteLine($"Turn {i + 1}:");
                 var pinsKnockedDown = new Random().Next(pins + 1);
                 pins -= pinsKnockedDown;
                 scores.Add(pinsKnockedDown);
-                if (pins == 0)
+                if (pins == 0 && i == 0)
                 {
-                    if (i == 0)
-                    {
-                        Console.WriteLine("You got a strike!");
-                        i = turns;
-                    }
-                    else
-                    {
-                        Console.WriteLine("You got a spare!");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"You knocked down {pinsKnockedDown} pins!");
+                    i = turns; // ensures that on a normal frame, if a player gets a strike, they don't get another turn.
                 }
             };
             return scores;

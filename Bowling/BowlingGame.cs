@@ -28,8 +28,13 @@ namespace Bowling
         {
             for (int i = 0; i < frames.Length; i++)
             {
-                Console.WriteLine($"Frame {i + 1}:");
-                score += frames[i].Play().Sum();
+                Console.Write($"Frame {i + 1}:\t");
+                var scores = frames[i].Play();
+                for (int j = 0; j < scores.Count(); j++)
+                {
+                    Console.Write($"Roll {j+1}: {scores[j]}\t");
+                }
+                score += scores.Sum();
                 Console.WriteLine($"Current score: {score}");
             }
         }
