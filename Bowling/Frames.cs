@@ -21,10 +21,10 @@ namespace Bowling
             new Frame(),
             new Frame(3)
         };
-        private int[] scores = new int[10];
 
         internal void Play()
         {
+            int[] scores = new int[10];
             for (int i = 0; i < frames.Length; i++)
             {
                 Console.Write($"Frame {i + 1}:\t");
