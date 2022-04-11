@@ -30,10 +30,19 @@ namespace Bowling
                 var roundScores = frames[i].Play();
                 scores[i] = roundScores;
                 scores[i].Add(roundScores.Sum());
+                if (i > 0 && IsSpare(scores[i - 1]))
+                {
+                    scores[i - 1][scores[i - 1].Count() - 1] += scores[i][0]; 
+                }
                 //scores[i] = roundScores.Sum();
                 //Console.WriteLine();
             }
             return scores;
+        }
+
+        private bool IsSpare(List<int> list)
+        {
+            return list.Count() == 3 && list.Last() == 10;
         }
     }
 }
