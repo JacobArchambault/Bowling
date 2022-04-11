@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Bowling
 {
-    internal class FixedFrame : IFrame
+    internal class Rolls : IPlayable
     {
         private int pins = 10;
         private readonly int turns;
-        internal FixedFrame(int turns)
+        internal Rolls(int numberOfRolls)
         {
-            this.turns = turns;
+            this.turns = numberOfRolls;
         }
 
-        internal FixedFrame() : this(2) { }
+        internal Rolls() : this(2) { }
 
         public IEnumerable<int> Play()
         {

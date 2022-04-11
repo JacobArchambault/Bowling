@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bowling.Interfaces
 {
-    internal interface IFrame
+    internal interface IPlayable
     {
         IEnumerable<int> Play();
     }
