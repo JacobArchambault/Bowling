@@ -1,5 +1,4 @@
-﻿using Bowling.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bowling
 {
-    internal class Rolls : IPlayable
+    internal class Rolls
     {
         private int pins = 10;
         private readonly int turns;

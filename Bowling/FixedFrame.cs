@@ -1,17 +1,10 @@
-﻿using Bowling.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Bowling
+﻿namespace Bowling
 {
     internal class FixedFrame
     {
-        IPlayable _turns;
+        readonly Rolls _turns;
 
-        public FixedFrame(IPlayable turns)
+        public FixedFrame(Rolls turns)
         {
             _turns = turns;
         }
