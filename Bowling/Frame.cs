@@ -4,7 +4,6 @@
     {
         private int pins = 10;
         private int turns;
-        private List<int> scores = new();
         internal Frame(int turns)
         {
             this.turns = turns;
@@ -14,6 +13,7 @@
 
         internal List<int> Play()
         {
+            List<int> scores = new();
             for (int i = 0; i < turns; i++)
             {
                 var pinsKnockedDown = new Random().Next(pins + 1);
