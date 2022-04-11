@@ -22,21 +22,22 @@ namespace Bowling
             new Frame(3)
         };
 
-        internal void Play()
+        internal List<int>[] Play()
         {
-            int[] scores = new int[10];
+            List<int>[] scores = new List<int>[10];
             for (int i = 0; i < frames.Length; i++)
             {
-                Console.Write($"Frame {i + 1}:\t");
                 var roundScores = frames[i].Play();
-                for (int j = 0; j < roundScores.Count(); j++)
-                {
-                    Console.Write($"Roll {j + 1}: {roundScores[j]}\t");
-                }
-                scores[i] = roundScores.Sum();
-                Console.Write($"Round total: {scores[i]}");
-                Console.WriteLine();
+                scores[i] = roundScores;
+                //for (int j = 0; j < roundScores.Count(); j++)
+                //{
+                //    //Console.Write($"Roll {j + 1}: {roundScores[j]}\t");
+                //}
+                //scores[i] = roundScores.Sum();
+                //Console.Write($"Round total: {scores[i]}");
+                //Console.WriteLine();
             }
+            return scores;
         }
     }
 }
