@@ -21,29 +21,10 @@
             List<int>[] scores = new List<int>[10];
             for (int i = 0; i < frames.Length; i++)
             {
-                var roundScores = frames[i].Play();
-                scores[i] = roundScores;
-                scores[i].Add(roundScores.Sum());
-                if (i > 0 && IsSpare(scores[i - 1]))
-                {
-                    scores[i - 1][^1] += scores[i][0];
-                }
-                else if (i > 0 && IsStrike(scores[i - 1]))
-                {
-                    scores[i - 1][^1] += (scores[i][0] + scores[i][1]); // incorrect: if two strikes in a row occur
-                }
+                scores[i] = frames[i].Play();
             }
             return scores;
         }
 
-        private static bool IsStrike(List<int> list)
-        {
-            return list[0] == 10;
-        }
-
-        private static bool IsSpare(List<int> list)
-        {
-            return list[0] != 10 && list[0] + list[1] == 10;
-        }
     }
 }
