@@ -1,8 +1,10 @@
-﻿namespace Bowling
+﻿using Bowling.Interfaces;
+
+namespace Bowling
 {
     internal class Frames
     {
-        private readonly Frame[] frames = new Frame[10]
+        private readonly IFrame[] frames = new IFrame[10]
         {
             new Frame(),
             new Frame(),
@@ -13,7 +15,7 @@
             new Frame(),
             new Frame(),
             new Frame(),
-            new Frame()
+            new FinalFrame()
         };
 
         internal List<int>[] PlayAll()
