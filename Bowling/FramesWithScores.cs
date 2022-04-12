@@ -17,11 +17,15 @@ namespace Bowling
             for (int i = 0; i < frames.Length; i++)
             {
                 scores.Add(frames[i].Sum());
+                if (i > 1 && IsStrike(frames[i-1]) && IsStrike(frames[i-2]))
+                {
+                    scores[i - 2] += frames[i][0];
+                }
                 if (i > 0 && IsSpare(frames[i - 1]))
                 {
                     scores[i - 1] += frames[i][0];
                 }
-                else if (i > 0 && IsStrike(frames[i - 1]))
+                if (i > 0 && IsStrike(frames[i - 1]))
                 {
                     if (frames[i].Count > 1)
                     {
@@ -29,7 +33,7 @@ namespace Bowling
                     }
                     else
                     {
-                        scores[i - 1] += frames[i][0] + frames[i + 1][0];
+                        scores[i - 1] += frames[i][0];
                     }
                 }
             }
