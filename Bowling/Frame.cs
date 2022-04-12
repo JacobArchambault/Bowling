@@ -1,6 +1,8 @@
-﻿namespace Bowling
+﻿using Bowling.Interfaces;
+
+namespace Bowling
 {
-    internal class Frame
+    internal class Frame : IFrame
     {
         private int pins = 10;
         private readonly int turns;
@@ -11,7 +13,7 @@
 
         internal Frame() : this(2) { }
 
-        internal List<int> Play()
+        public List<int> Play()
         {
             List<int> scores = new();
             for (int i = 0; i < turns; i++)
