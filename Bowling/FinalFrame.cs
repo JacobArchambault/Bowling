@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bowling.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bowling
 {
-    internal class FinalFrame
+    internal class FinalFrame : IFrame
     {
         private int pins = 10;
         private int turns;
@@ -17,7 +18,7 @@ namespace Bowling
 
         internal FinalFrame() : this(2) { }
 
-        internal List<int> Play()
+        public List<int> Play()
         {
             List<int> scores = new();
             for (int i = 0; i < turns; i++)
